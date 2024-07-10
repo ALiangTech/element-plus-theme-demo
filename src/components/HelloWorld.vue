@@ -10,6 +10,17 @@ import Menu from './menu.vue'
 import Buttons from './Button.vue'
 import Dialogs from './Dialog.vue'
 import Tabs from './Tabs.vue'
+import Link from './Link.vue'
+import Radio from './Radio.vue'
+import Switch from './Switch.vue'
+import Dates from './Date.vue'
+import Uploads from './Upload.vue'
+import Drawers from './Drawer.vue'
+import Popconfirm from './Popconfirm.vue'
+import Breadcrumb from './Breadcrumb.vue'
+import Pagination from './Pagination.vue'
+import Steps from './Steps.vue'
+import Scrollbar from './Scrollbar.vue'
 import { ElInput, ElDatePicker, ElButton, ElSwitch } from 'element-plus'
 
 import { useDark, useToggle } from '@vueuse/core'
@@ -62,54 +73,49 @@ const popperOptions = {
   <section style="width: 60vw;margin: 30px auto;">
     <el-config-provider :locale="locale">
       <div style="margin-bottom: 12px;">
-        <ElButton  type="primary" @click="handleLangulang('en')">切换英文</ElButton>
-        <ElButton  type="primary" @click="handleLangulang('zhCn')">切换中文</ElButton>
-        <ElButton  type="primary" @click="toggleDark()">黑白主题</ElButton>
+        <ElButton type="primary" @click="handleLangulang('en')">切换英文</ElButton>
+        <ElButton type="primary" @click="handleLangulang('zhCn')">切换中文</ElButton>
+        <ElButton type="primary" @click="toggleDark()">黑白主题</ElButton>
         <span class="ml-2">{{ isDark ? 'Dark' : 'Light' }}</span>
       </div>
       <div style="padding-bottom: 10px;">
-          <Buttons></Buttons>
-        </div>
-        <div style="padding-bottom: 10px;">
-          <Dialogs></Dialogs>
-        </div>
-      <div style="width: 200px;padding-bottom: 10px;">
-        <div style="padding-bottom: 10px;">
-          <el-input v-model="input1" style="width: 240px" :prefix-icon="Search" />
-        </div>
-        <div style="padding-bottom: 10px;">
-          <ElInput></ElInput>
-        </div>
-        <div style="padding-bottom: 10px;">
-          <ElDatePicker v-model="value1" type="date" />
-        </div>
-        <div style="padding-bottom: 10px;">
-          <el-select v-model="value" placeholder="Select" style="width: 240px" :popper-options="popperOptions">
-            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-          </el-select>
-        </div>
-        <div style="padding-bottom: 10px;">
-          <el-slider v-model="value12" />
-        </div>
-        <div style="padding-bottom: 10px;">
-          <el-select v-model="value4" multiple collapse-tags collapse-tags-tooltip :max-collapse-tags="3" :popper-options="popperOptions"
-            placeholder="Select" style="width: 240px">
-            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
-          </el-select>
-        </div>
-        <div style="padding-bottom: 10px;">
-          <el-input v-model="textarea2" style="width: 240px" :autosize="{ minRows: 2, maxRows: 4 }" type="textarea" />
-        </div>
+        <h4>按钮</h4>
+        <Buttons></Buttons>
       </div>
-      <div style="padding-bottom: 10px;">
-        <Tabs></Tabs>
+      <div>
+        <h4>链接</h4>
+        <Link />
       </div>
-      <div style="padding-bottom: 10px;">
-          <Table></Table>
-        </div>
-        <div style="--el-menu-bg-color: transparent;">
-          <Menu></Menu>
-        </div>
+      <div>
+          <h4>输入框</h4>
+          <div style="padding-bottom: 10px;">
+            <el-input v-model="input1" style="width: 240px" :prefix-icon="Search" />
+          </div>
+          <div style="padding-bottom: 10px;">
+            <ElInput style="width: 240px"></ElInput>
+          </div>
+          <div>
+            <el-input v-model="textarea2" style="width: 240px" :autosize="{ minRows: 2, maxRows: 4 }" type="textarea" />
+          </div>
+      </div>
+      <div>
+        <h4>标签输入框</h4>
+        <p>无</p>
+      </div>
+      <Radio></Radio>
+      <Switch></Switch>
+      <Dates></Dates>
+      <Uploads></Uploads>
+      <Drawers></Drawers>
+      <Dialogs></Dialogs>
+      <Popconfirm></Popconfirm>
+      <Breadcrumb></Breadcrumb>
+      <Pagination></Pagination>
+      <Steps></Steps>
+      <Scrollbar></Scrollbar>
+      <Table></Table>
+      <Menu></Menu>
+      <Tabs></Tabs>
     </el-config-provider>
   </section>
 </template>

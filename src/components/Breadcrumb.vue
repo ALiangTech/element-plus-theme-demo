@@ -1,0 +1,25 @@
+<template>
+<section>
+    <h4>面包屑</h4>
+    <el-breadcrumb :separator-icon="ArrowRight">
+        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item>第二页</el-breadcrumb-item>
+        <el-breadcrumb-item>测试页</el-breadcrumb-item>
+        <el-breadcrumb-item>结果</el-breadcrumb-item>
+    </el-breadcrumb>
+    <p>
+        <el-breadcrumb separator="/">
+            <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
+            <el-breadcrumb-item>
+                <a href="/">promotion management</a>
+            </el-breadcrumb-item>
+            <el-breadcrumb-item>promotion list</el-breadcrumb-item>
+            <el-breadcrumb-item>promotion detail</el-breadcrumb-item>
+        </el-breadcrumb>
+    </p>
+</section>
+</template>
+
+<script lang="ts" setup>
+import { ArrowRight } from '@element-plus/icons-vue'
+</script>

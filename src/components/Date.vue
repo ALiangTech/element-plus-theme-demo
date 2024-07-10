@@ -1,0 +1,70 @@
+<template>
+    <div>
+        <h4>日期/时间选择器</h4>
+        <div>
+            <div class="demonstration">默认</div>
+            <el-date-picker v-model="value1" type="daterange" range-separator="To" start-placeholder="Start date"
+                end-placeholder="End date" :size="size" />
+        </div>
+        <div>
+            <div>With quick options</div>
+            <el-date-picker v-model="value2" type="daterange" unlink-panels range-separator="To"
+                start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size" />
+        </div>
+        <div>
+            <div class="demonstration">日期时间</div>
+            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" />
+        </div>
+        <div>
+            <div>时间选择器</div>
+            <el-time-picker v-model="value4" placeholder="Arbitrary time" />
+        </div>
+        <div>
+            <div>时间选择</div>
+            <el-time-select v-model="value5" style="width: 240px" start="08:30" step="00:15" end="18:30"
+                placeholder="Select time" />
+        </div>
+    </div>
+</template>
+
+<script lang="ts" setup>
+import { ref } from 'vue'
+
+const size = ref<'default' | 'large' | 'small'>('default')
+
+const value1 = ref('')
+const value2 = ref('')
+const value3 = ref('')
+const value4 = ref('')
+const value5 = ref('')
+
+const shortcuts = [
+    {
+        text: 'Last week',
+        value: () => {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+            return [start, end]
+        },
+    },
+    {
+        text: 'Last month',
+        value: () => {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 30)
+            return [start, end]
+        },
+    },
+    {
+        text: 'Last 3 months',
+        value: () => {
+            const end = new Date()
+            const start = new Date()
+            start.setTime(start.getTime() - 3600 * 1000 * 24 * 90)
+            return [start, end]
+        },
+    },
+]
+</script>

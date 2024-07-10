@@ -1,33 +1,118 @@
 <template>
-    <el-table :data="tableData" style="width: 100%;--el-table-header-bg-color: #f2f3f5">
-      <el-table-column prop="date" sortable  label="Date" width="180" />
-      <el-table-column prop="name" label="Name" width="180" />
-      <el-table-column prop="address" label="Address" />
+  <div>
+    <h4>表格</h4>
+    <el-table
+      :data="tableData"
+      style="width: 100%; margin-bottom: 20px"
+      row-key="id"
+      border
+      default-expand-all
+    >
+      <el-table-column prop="date" label="Date" sortable />
+      <el-table-column prop="name" label="Name" sortable />
+      <el-table-column prop="address" label="Address" sortable />
     </el-table>
-  </template>
-  
-  <script lang="ts" setup>
-  const tableData = [
-    {
-      date: '2016-05-03',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles',
-    },
-    {
-      date: '2016-05-02',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles',
-    },
-    {
-      date: '2016-05-04',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles',
-    },
-    {
-      date: '2016-05-01',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles',
-    },
-  ]
-  </script>
-  
+  </div>
+</template>
+<script lang="ts" setup>
+interface User {
+  id: number
+  date: string
+  name: string
+  address: string
+  hasChildren?: boolean
+  children?: User[]
+}
+
+const load = (
+  row: User,
+  treeNode: unknown,
+  resolve: (date: User[]) => void
+) => {
+  setTimeout(() => {
+    resolve([
+      {
+        id: 31,
+        date: '2016-05-01',
+        name: 'wangxiaohu',
+        address: 'No. 189, Grove St, Los Angeles',
+      },
+      {
+        id: 32,
+        date: '2016-05-01',
+        name: 'wangxiaohu',
+        address: 'No. 189, Grove St, Los Angeles',
+      },
+    ])
+  }, 1000)
+}
+
+const tableData: User[] = [
+  {
+    id: 1,
+    date: '2016-05-02',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    id: 2,
+    date: '2016-05-04',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    id: 3,
+    date: '2016-05-01',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+    children: [
+      {
+        id: 31,
+        date: '2016-05-01',
+        name: 'wangxiaohu',
+        address: 'No. 189, Grove St, Los Angeles',
+      },
+      {
+        id: 32,
+        date: '2016-05-01',
+        name: 'wangxiaohu',
+        address: 'No. 189, Grove St, Los Angeles',
+      },
+    ],
+  },
+  {
+    id: 4,
+    date: '2016-05-03',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+]
+
+const tableData1: User[] = [
+  {
+    id: 1,
+    date: '2016-05-02',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    id: 2,
+    date: '2016-05-04',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    id: 3,
+    date: '2016-05-01',
+    name: 'wangxiaohu',
+    hasChildren: true,
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    id: 4,
+    date: '2016-05-03',
+    name: 'wangxiaohu',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+]
+</script>
