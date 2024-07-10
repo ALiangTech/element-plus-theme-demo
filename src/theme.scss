@@ -1,0 +1,76 @@
+$colors: () !default;
+$--colors: (
+  "primary": (
+    "base": #165dff,
+  ),
+  "success": (
+    "base": #21ba45,
+  ),
+  "warning": (
+    "base": #f2711c,
+  ),
+  "danger": (
+    "base": #db2828,
+  ),
+  "error": (
+    "base": #db2828,
+  ),
+  "info": (
+    "base": #42b8dd,
+  ),
+);
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: $--colors,
+  $input: (
+    // "bg-color": #f2f3f5,
+    // "border-color": transparent,
+  ),
+  $fill-color: (
+    'blank': #f2f3f5,
+  ),
+  $border-color: (
+    '': transparent
+  ),
+  $border-radius: (
+    'base':2px,
+  ),
+  $menu: (
+    'text-color': '#666',
+    'hover-bg-color': '#f2f3f5',
+    'active-color': '#165dff',
+  ),
+  $font-size:   (
+    'extra-large': 18px,
+    'large': 16px,
+    'medium': 14px,
+    'base': 12px,
+    'small': 12px,
+    'extra-small': 12px,
+  ),
+  $dialog: (
+    'padding-primary': 12px 18px,
+  )
+);
+
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+@use "./dark.scss";
+
+// import 'element-plus/theme-chalk/src/dark/css-vars.scss'
+
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss';
+
+
+
+html {
+  .el-input__wrapper.is-focus {
+      background-color: #fff;
+  }
+  .el-popper__arrow {
+    display: none;
+  }
+}
+
+
+

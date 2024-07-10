@@ -1,0 +1,19 @@
+@forward 'element-plus/theme-chalk/src/dark/var.scss' with (
+  $bg-color: (
+    'page': #0a0a0a,
+    '': #626aef,
+    'overlay': #1d1e1f,
+  ),
+  $text-color: (
+    disabled: blue
+  ),
+//   $input: (
+//     "bg-color": transparent,
+//     "border-color": transparent,
+//   ),
+);
+html.dark {
+    .el-input__wrapper.is-focus {
+        background-color: #ccc;
+    }
+}
