@@ -59,7 +59,7 @@ const popperOptions = {
 </script>
 
 <template>
-  <section>
+  <section style="width: 60vw;margin: 30px auto;">
     <el-config-provider :locale="locale">
       <div style="margin-bottom: 12px;">
         <ElButton  type="primary" @click="handleLangulang('en')">切换英文</ElButton>
