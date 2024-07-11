@@ -67,11 +67,6 @@ $--colors: (
 
 // common
 $hover-bg-color:  #e5e6eb;
-.el-input__wrapper,.el-textarea__inner,.el-select__wrapper {
-  &:hover {
-    background-color: $hover-bg-color;
-  }
-}
 
 html {
   background-color: white;
@@ -80,6 +75,11 @@ html {
   }
   .el-popper__arrow {
     display: none;
+  }
+  .el-input__wrapper,.el-textarea__inner,.el-select__wrapper {
+    &:hover {
+      background-color: $hover-bg-color;
+    }
   }
 }
 

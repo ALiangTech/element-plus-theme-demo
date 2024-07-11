@@ -12,9 +12,15 @@
 //     "border-color": transparent,
 //   ),
 );
+$hover-bg-color:  #e5e6eb33;
 html.dark {
     .el-input__wrapper.is-focus {
         background-color: #ccc;
     }
     background-color: black;
+    .el-input__wrapper,.el-textarea__inner,.el-select__wrapper {
+      &:hover {
+        background-color: $hover-bg-color;
+      }
+    }
 }
