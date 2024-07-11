@@ -25,15 +25,17 @@ $--colors: (
   $input: (
     // "bg-color": #f2f3f5,
     // "border-color": transparent,
+    "hover-border-color": transparent
   ),
+  $select: (
+    'border-color-hover': transparent
+  ),
+  $border-color-hover: transparent,
   $fill-color: (
     'blank': #f2f3f5,
   ),
   $border-color: (
     '': transparent
-  ),
-  $border-radius: (
-    'base':2px,
   ),
   $menu: (
     'text-color': '#666',
@@ -63,6 +65,14 @@ $--colors: (
 
 
 
+// common
+$hover-bg-color:  #e5e6eb;
+.el-input__wrapper,.el-textarea__inner,.el-select__wrapper {
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
 html {
   background-color: white;
   .el-input__wrapper.is-focus {
@@ -72,6 +82,4 @@ html {
     display: none;
   }
 }
-
-
 

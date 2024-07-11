@@ -21,7 +21,8 @@ import Breadcrumb from './Breadcrumb.vue'
 import Pagination from './Pagination.vue'
 import Steps from './Steps.vue'
 import Scrollbar from './Scrollbar.vue'
-import { ElInput, ElDatePicker, ElButton, ElSwitch } from 'element-plus'
+import { ElInput, ElDatePicker, ElButton } from 'element-plus'
+import Select from './Select.vue'
 
 import { useDark, useToggle } from '@vueuse/core'
 
@@ -102,6 +103,7 @@ const popperOptions = {
         <h4>标签输入框</h4>
         <p>无</p>
       </div>
+      <Select></Select>
       <Radio></Radio>
       <Switch></Switch>
       <Dates></Dates>
