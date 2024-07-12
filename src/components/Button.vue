@@ -38,6 +38,7 @@
         <p>
             <div><el-button type="primary" >你好</el-button></div>
            <p> <el-button type="success" >你</el-button></p>
+           <p> <el-button type="success" >你好世界，时间过得真快</el-button></p>
         </p>
     </div>
 </template>
