@@ -35,6 +35,10 @@
             <el-button type="warning" :icon="Star" circle />
             <el-button type="danger" :icon="Delete" circle />
         </div>
+        <p>
+            <div><el-button type="primary" >你好</el-button></div>
+           <p> <el-button type="success" >你</el-button></p>
+        </p>
     </div>
 </template>
 

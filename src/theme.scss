@@ -67,7 +67,7 @@ $--colors: (
 
 // common
 $hover-bg-color:  #e5e6eb;
-
+$button-min-width: 80px;
 html {
   background-color: white;
   .el-input__wrapper.is-focus {
@@ -80,6 +80,12 @@ html {
     &:hover {
       background-color: $hover-bg-color;
     }
+  }
+  .el-button {
+    min-width: $button-min-width;
+  }
+  .is-circle {
+    min-width: auto;
   }
 }
 
