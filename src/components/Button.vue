@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mb-4">
-            <el-button>Default</el-button>
+            <el-button style="--el-button-hover-text-color:#4e5969;--el-button-hover-bg-color:#e5e6eb">Default</el-button>
             <el-button type="primary">Primary</el-button>
             <el-button type="success">Success</el-button>
             <el-button type="info">Info</el-button>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="mb-4">
-            <el-button plain>Plain</el-button>
+            <el-button plain style="--el-button-hover-text-color:#4e5969;--el-button-hover-bg-color:#e5e6eb">Plain</el-button>
             <el-button type="primary" plain>Primary</el-button>
             <el-button type="success" plain>Success</el-button>
             <el-button type="info" plain>Info</el-button>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="mb-4">
-            <el-button round>Round</el-button>
+            <el-button round style="--el-button-hover-text-color:#4e5969;--el-button-hover-bg-color:#e5e6eb">Round</el-button>
             <el-button type="primary" round>Primary</el-button>
             <el-button type="success" round>Success</el-button>
             <el-button type="info" round>Info</el-button>
@@ -28,7 +28,7 @@
         </div>
 
         <div>
-            <el-button :icon="Search" circle />
+            <el-button :icon="Search" circle style="--el-button-hover-text-color:#4e5969;--el-button-hover-bg-color:#e5e6eb"/>
             <el-button type="primary" :icon="Edit" circle />
             <el-button type="success" :icon="Check" circle />
             <el-button type="info" :icon="Message" circle />

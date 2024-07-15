@@ -4,22 +4,22 @@ $--colors: (
     "base": #165dff,
   ),
   "success": (
-    "base": #21ba45,
+    "base": #00B42A,
   ),
   "warning": (
-    "base": #f2711c,
+    "base": #FF7D01,
   ),
   "danger": (
-    "base": #db2828,
+    "base": #F53F3F,
   ),
   "error": (
-    "base": #db2828,
+    "base": #F53F3F, 
   ),
   "info": (
-    "base": #42b8dd,
-  ),
+    "base": #1d2129,
+  )
 );
-
+@use "element-plus/theme-chalk/src/mixins/function.scss" as ele;
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: $--colors,
   $input: (
@@ -55,6 +55,10 @@ $--colors: (
   ),
   $dialog: (
     'padding-primary': 12px 18px,
+  ),
+  $radio-button: (
+    'checked-bg-color': ele.getCssVar('color-white'),
+    'checked-text-color': ele.getCssVar('color-primary'),
   )
 );
 
@@ -67,15 +71,16 @@ $--colors: (
 @use 'element-plus/theme-chalk/src/dark/css-vars.scss';
 
 
+@mixin reset-is-focus {
+  background-color: #fff!important;
+}
 
 // common
 $hover-bg-color:  #e5e6eb;
 $button-min-width: 80px;
 html {
   background-color: white;
-  .el-input__wrapper.is-focus {
-      background-color: #fff;
-  }
+  --el-color-border-2: #E5E6EB;
   .el-popper__arrow {
     display: none;
   }
@@ -91,4 +96,31 @@ html {
     min-width: auto;
   }
 }
+.el-input__wrapper.is-focus {
+  @include reset-is-focus()
+}
+.el-textarea__inner:focus {
+  @include reset-is-focus()
+}
+.el-select__wrapper.is-focused{
+  background-color: #e5e6eb!important;
+}
+
+.el-radio-button__inner {
+  &:hover {
+    background-color: var(--el-color-border-2);
+  }
+}
+
+.el-tag.el-tag--info {
+  --el-tag-bg-color: #ffffff;
+  --el-tag-border-color: #e5e6eb;
+  --el-tag-hover-color: #F2F3F5;
+}
+
+.el-tag .el-tag__close:hover {
+  color: currentColor;
+  background-color: transparent;
+}
+
 
