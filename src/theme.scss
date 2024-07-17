@@ -1,75 +1,61 @@
-$colors: () !default;
+$colors: (
+  ) !default;
 $--colors: (
-  "primary": (
-    "base": #165dff,
+  "primary": ("base": #165dff,
   ),
-  "success": (
-    "base": #00B42A,
+  "success": ("base": #00B42A,
   ),
-  "warning": (
-    "base": #FF7D01,
+  "warning": ("base": #FF7D01,
   ),
-  "danger": (
-    "base": #F53F3F,
+  "danger": ("base": #F53F3F,
   ),
-  "error": (
-    "base": #F53F3F, 
+  "error": ("base": #F53F3F,
   ),
-  "info": (
-    "base": #1d2129,
+  "info": ("base": #1d2129,
   )
 );
+$bg: #f2f3f5;
 @use "element-plus/theme-chalk/src/mixins/function.scss" as ele;
-@forward 'element-plus/theme-chalk/src/common/var.scss' with (
-  $colors: $--colors,
-  $input: (
-    // "bg-color": #f2f3f5,
+@forward 'element-plus/theme-chalk/src/common/var.scss' with ($colors: $--colors,
+  $input: ( // "bg-color": #f2f3f5,
     // "border-color": transparent,
-    "hover-border-color": transparent
-  ),
-  $button: (
-    'hover-text-color': #4e5969,
+    "hover-border-color": transparent),
+  $button: ('hover-text-color': #4e5969,
     'hover-bg-color': #e5e6eb,
     'hover-border-color': transparent,
-    "active-text-color": #4e5969,
+    "active-text-color": #fff,
     "active-bg-color": #c9cdd4,
     'active-border-color': transparent,
   ),
-  $select: (
-    'border-color-hover': transparent
-  ),
+  $select: ('border-color-hover': transparent),
   $border-color-hover: transparent,
-  $fill-color: (
-    'blank': #f2f3f5,
+  $fill-color: ('blank': $bg,
   ),
-  $border-color: (
-    '': transparent
-  ),
-  $menu: (
-    'text-color': '#666',
+  $border-color: ('': transparent),
+  $menu: ('text-color': '#666',
     'hover-bg-color': '#f2f3f5',
     'active-color': '#165dff',
   ),
-  $font-size:   (
-    'extra-large': 18px,
+  $font-size: ('extra-large': 18px,
     'large': 16px,
     'medium': 14px,
     'base': 12px,
     'small': 12px,
     'extra-small': 12px,
   ),
-  $switch: (
-    "off-color": #dcdfe6,
+  $switch: ("off-color": #dcdfe6,
   ),
-  $dialog: (
-    'padding-primary': 0,
+  $dialog: ('padding-primary': 0,
     'width': 520px,
   ),
-  $radio-button: (
-    'checked-bg-color': ele.getCssVar('color-white'),
+  $radio-button: ('checked-bg-color': ele.getCssVar('color-white'),
     'checked-text-color': ele.getCssVar('color-primary'),
-  )
-);
+  ),
+  $radio: ("text-color": #1d2129,
+  ),
+  $checkbox: ("text-color": #1d2129,
+    "checked-text-color": #1d2129,
+  ));
 
 @use "element-plus/theme-chalk/src/index.scss" as *;
 
@@ -81,48 +67,64 @@ $--colors: (
 
 
 @mixin reset-is-focus {
-  background-color: #fff!important;
+  background-color: #fff !important;
 }
 
 // common
-$hover-bg-color:  #e5e6eb;
+$hover-bg-color: #e5e6eb;
 $button-min-width: 80px;
+
 html {
   background-color: white;
   --el-color-border-2: #E5E6EB;
-  .el-popper__arrow {
-    display: none;
-  }
-  .el-input__wrapper,.el-textarea__inner,.el-select__wrapper {
-    &:hover {
-      background-color: $hover-bg-color;
-    }
-  }
-  .el-select__selection {
-    .el-tag {
-      border-color: var(--el-color-border-2);
-    }
-  }
-  .el-button {
-    min-width: $button-min-width;
-  }
-  .is-circle {
-    min-width: auto;
+}
+
+.el-popper__arrow {
+  display: none; // 隐藏下拉框的箭头
+}
+
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper {
+  &:hover {
+    background-color: $hover-bg-color; // 修改输入框类型组件的背景色
   }
 }
-.el-input__wrapper.is-focus {
-  @include reset-is-focus()
+
+.el-select__selection {
+  .el-tag {
+    border-color: var(--el-color-border-2); // 修改下拉框中的标签border颜色
+  }
 }
+
+.el-button {
+  min-width: $button-min-width; // 修改默认按钮组件的最小宽度
+}
+
+.el-button--small {
+  min-width: 56px; // 修改小尺寸按钮组件的最新宽度
+}
+
+.el-button.is-plain {
+  --el-button-hover-border-color: transparent; // 取消原始按钮下的边框
+}
+
+.is-circle {
+  min-width: auto; // 防止圆形按钮组件 被上面组件的min-width影响
+}
+
+.el-input__wrapper.is-focus,
 .el-textarea__inner:focus {
-  @include reset-is-focus()
+  @include reset-is-focus() // 修改获取焦点后的输入框 颜色不能被hover修改 所以添加impoarnt关键词
 }
-.el-select__wrapper.is-focused{
-  background-color: #fff!important;
+
+.el-select__wrapper.is-focused {
+  background-color: #fff !important; // 修改下拉框 获取焦点后 不能被houber修改 所以添加impoarnt关键词
 }
 
 .el-radio-button__inner {
   &:hover {
-    background-color: var(--el-color-border-2);
+    background-color: var(--el-color-border-2); // 修改radio 按钮组的背景色
   }
 }
 
@@ -137,23 +139,55 @@ html {
   background-color: transparent;
 }
 
-.el-button.is-plain {
-  --el-button-hover-border-color: transparent;
-}
 .el-range-editor.is-active {
-  background-color: #fff!important; // 时间选择器激活白色背景
+  background-color: #fff !important; // 时间选择器激活白色背景
 }
+
 .el-dialog__header {
+  // 修改dialog下的header
   --h-height: 48px;
   padding-left: 24px;
   height: var(--h-height);
   line-height: var(--h-height);
 }
+
 .el-dialog__body {
+  // 修改dialog下的body
   padding: 0 24px;
 }
+
 .el-dialog__footer {
+  // 修改dialog下的footer
   padding: 32px 24px 24px;
 }
 
+.el-popconfirm__main {
+  align-items: flex-start; // 修改popconfirm 图标与文字的对齐方式
+}
 
+.el-breadcrumb {
+
+  .el-breadcrumb__inner.is-link,
+  .el-breadcrumb__inner a {
+    font-weight: normal;
+    color: #4e5969; // 修改面包屑的默认文字的颜色和字重
+  }
+
+  .el-breadcrumb__item:last-child .el-breadcrumb__inner,
+  .el-breadcrumb__item:last-child .el-breadcrumb__inner a {
+    color: #1d2129; // 修改面包屑最好一个的文字颜色
+  }
+}
+
+.el-upload--picture-card {
+  background-color: $bg; // 修改卡片上传的背景色
+  &:hover {
+    background-color: #E5E6EB;
+  }
+}
+
+.el-upload-dragger {
+  &:hover {
+    background-color: #E5E6EB;
+  }
+}

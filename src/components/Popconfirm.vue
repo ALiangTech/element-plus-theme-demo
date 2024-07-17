@@ -6,6 +6,11 @@
         <el-button>Delete</el-button>
       </template>
     </el-popconfirm>
+    <el-popconfirm title="你确定删除么你确定删除么你确定删除么你确定删除么你确定删除么你确定删除么你确定删除么">
+      <template #reference>
+        <el-button>Delssete</el-button>
+      </template>
+    </el-popconfirm>
  </section>
   </template>
   

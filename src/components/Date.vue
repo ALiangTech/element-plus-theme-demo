@@ -4,25 +4,69 @@
         <div>
             <div class="demonstration">默认</div>
             <el-date-picker v-model="value1" type="daterange" range-separator="To" start-placeholder="Start date"
-                end-placeholder="End date" :size="size" />
+                :popper-options="{
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, 4],
+                            },
+                        },
+                    ],
+                }" end-placeholder="End date" :size="size" />
         </div>
         <div>
             <div>With quick options</div>
-            <el-date-picker v-model="value2" type="daterange" unlink-panels range-separator="To"
-                start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size" />
+            <el-date-picker v-model="value2" type="daterange" unlink-panels range-separator="To" :popper-options="{
+                modifiers: [
+                    {
+                        name: 'offset',
+                        options: {
+                            offset: [0, 4],
+                        },
+                    },
+                ],
+            }" start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size" />
         </div>
         <div>
             <div class="demonstration">日期时间</div>
-            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" />
+            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" :popper-options="{
+                modifiers: [
+                    {
+                        name: 'offset',
+                        options: {
+                            offset: [0, 4],
+                        },
+                    },
+                ],
+            }" />
         </div>
         <div>
-            <div>时间选择器</div>
-            <el-time-picker v-model="value4" placeholder="Arbitrary time" />
+            <div>时间选择器(需要重新封装)</div>
+            <el-time-picker v-model="value4" placeholder="Arbitrary time" :popper-options="{
+                modifiers: [
+                    {
+                        name: 'offset',
+                        options: {
+                            offset: [0, 4],
+                        },
+                    },
+                ],
+            }" />
         </div>
         <div>
             <div>时间选择</div>
             <el-time-select v-model="value5" style="width: 240px" start="08:30" step="00:15" end="18:30"
-                placeholder="Select time" />
+                :popper-options="{
+                    modifiers: [
+                        {
+                            name: 'offset',
+                            options: {
+                                offset: [0, 4],
+                            },
+                        },
+                    ],
+                }" placeholder="Select time" />
         </div>
     </div>
 </template>
