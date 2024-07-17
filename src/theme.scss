@@ -27,6 +27,14 @@ $--colors: (
     // "border-color": transparent,
     "hover-border-color": transparent
   ),
+  $button: (
+    'hover-text-color': #4e5969,
+    'hover-bg-color': #e5e6eb,
+    'hover-border-color': transparent,
+    "active-text-color": #4e5969,
+    "active-bg-color": #c9cdd4,
+    'active-border-color': transparent,
+  ),
   $select: (
     'border-color-hover': transparent
   ),
@@ -89,6 +97,11 @@ html {
       background-color: $hover-bg-color;
     }
   }
+  .el-select__selection {
+    .el-tag {
+      border-color: var(--el-color-border-2);
+    }
+  }
   .el-button {
     min-width: $button-min-width;
   }
@@ -103,7 +116,7 @@ html {
   @include reset-is-focus()
 }
 .el-select__wrapper.is-focused{
-  background-color: #e5e6eb!important;
+  background-color: #fff!important;
 }
 
 .el-radio-button__inner {
@@ -121,6 +134,13 @@ html {
 .el-tag .el-tag__close:hover {
   color: currentColor;
   background-color: transparent;
+}
+
+.el-button.is-plain {
+  --el-button-hover-border-color: transparent;
+}
+.el-range-editor.is-active {
+  background-color: #fff!important; // 时间选择器激活白色背景
 }
 
 

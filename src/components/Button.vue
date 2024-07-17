@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mb-4">
-            <el-button style="--el-button-hover-text-color:#4e5969;--el-button-hover-bg-color:#e5e6eb">Default</el-button>
+            <el-button >Default</el-button>
             <el-button type="primary">Primary</el-button>
             <el-button type="success">Success</el-button>
             <el-button type="info">Info</el-button>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="mb-4">
-            <el-button plain style="--el-button-hover-text-color:#4e5969;--el-button-hover-bg-color:#e5e6eb">Plain</el-button>
+            <el-button plain>Plain</el-button>
             <el-button type="primary" plain>Primary</el-button>
             <el-button type="success" plain>Success</el-button>
             <el-button type="info" plain>Info</el-button>

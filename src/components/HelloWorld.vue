@@ -21,6 +21,7 @@ import Breadcrumb from './Breadcrumb.vue'
 import Pagination from './Pagination.vue'
 import Steps from './Steps.vue'
 import Scrollbar from './Scrollbar.vue'
+import CheckedBox from './CheckedBox.vue'
 import { ElInput, ElDatePicker, ElButton } from 'element-plus'
 import Select from './Select.vue'
 
@@ -105,6 +106,7 @@ const popperOptions = {
       </div>
       <Select></Select>
       <Radio></Radio>
+      <CheckedBox></CheckedBox>
       <Switch></Switch>
       <Dates></Dates>
       <Uploads></Uploads>
