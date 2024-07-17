@@ -42,7 +42,7 @@
             }" />
         </div>
         <div>
-            <div>时间选择器(需要重新封装)</div>
+            <div>时间选择器</div>
             <el-time-picker v-model="value4" placeholder="Arbitrary time" :popper-options="{
                 modifiers: [
                     {
