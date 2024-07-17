@@ -5,7 +5,7 @@
       打开dialog
     </el-button>
 
-    <el-dialog v-model="dialogVisible" title="Tips" width="500" :before-close="handleClose">
+    <el-dialog v-model="dialogVisible" title="Tips" :before-close="handleClose">
       <span>This is a message</span>
       <template #footer>
         <div class="dialog-footer">
