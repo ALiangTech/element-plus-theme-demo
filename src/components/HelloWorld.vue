@@ -23,6 +23,7 @@ import Steps from './Steps.vue'
 import Scrollbar from './Scrollbar.vue'
 import CheckedBox from './CheckedBox.vue'
 import { ElInput, ElDatePicker, ElButton } from 'element-plus'
+import Finger from './finger.vue'
 import Select from './Select.vue'
 
 import { useDark, useToggle } from '@vueuse/core'
@@ -120,6 +121,7 @@ const popperOptions = {
       <Table></Table>
       <Menu></Menu>
       <Tabs></Tabs>
+      <Finger></Finger>
     </el-config-provider>
   </section>
 </template>
