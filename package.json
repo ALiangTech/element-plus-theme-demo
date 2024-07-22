@@ -1,24 +1,31 @@
 {
-  "name": "demo",
+  "name": "yiye-theme",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
+  "files": [
+    "./src/theme.scss"
+  ],
   "dependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
     "@fingerprintjs/fingerprintjs": "3",
     "@vueuse/core": "^10.11.0",
     "dayjs": "^1.11.11",
-    "element-plus": "^2.7.6",
     "vue": "^3.4.29"
   },
   "devDependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "@vitejs/plugin-vue": "^5.0.5",
+    "element-plus": "^2.7.6",
     "sass": "^1.77.6",
     "vite": "^5.3.1"
+  },
+  "peerDependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.7.6"
   }
 }
