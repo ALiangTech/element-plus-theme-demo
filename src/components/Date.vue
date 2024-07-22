@@ -4,7 +4,7 @@
         <div>
             <div class="demonstration">默认</div>
             <el-date-picker v-model="value1" type="daterange" range-separator="To" start-placeholder="Start date"
-
+            popper-class="y-arrow-hidden"
             :prefix-icon="customPrefix"
                 :popper-options="{
                     modifiers: [
@@ -19,7 +19,7 @@
         </div>
         <div>
             <div>With quick options</div>
-            <el-date-picker v-model="value2" type="daterange" unlink-panels range-separator="To" :popper-options="{
+            <el-date-picker v-model="value2" type="daterange" unlink-panels range-separator="To" popper-class="y-arrow-hidden" :popper-options="{
                 modifiers: [
                     {
                         name: 'offset',
@@ -28,11 +28,11 @@
                         },
                     },
                 ],
-            }" start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size"  :prefix-icon="customPrefix"/>
+            }" start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size"   :prefix-icon="customPrefix"/>
         </div>
         <div>
             <div class="demonstration">日期时间</div>
-            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" :prefix-icon="customPrefixForTime" :popper-options="{
+            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" popper-class="y-arrow-hidden" :prefix-icon="customPrefixForTime" :popper-options="{
                 modifiers: [
                     {
                         name: 'offset',
@@ -45,7 +45,7 @@
         </div>
         <div>
             <div>时间选择器</div>
-            <el-time-picker v-model="value4" placeholder="Arbitrary time" :prefix-icon="customPrefixForTime" :popper-options="{
+            <el-time-picker v-model="value4" placeholder="Arbitrary time" :prefix-icon="customPrefixForTime" popper-class="y-arrow-hidden" :popper-options="{
                 modifiers: [
                     {
                         name: 'offset',

@@ -2,7 +2,7 @@
   <h4>选择器</h4>
   <div class="m-4">
     <p>default</p>
-    <el-select v-model="value1" multiple placeholder="Select" style="width: 240px" :popper-options="{
+    <el-select v-model="value1" multiple placeholder="Select" style="width: 240px" popper-class="y-arrow-hidden" :popper-options="{
       modifiers: [
         {
           name: 'offset',
@@ -12,7 +12,7 @@
         },
       ],
     }">
-      <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" :popper-options="{
+      <el-option v-for="item in options" :key="item.value" :label="item.label" popper-class="y-arrow-hidden" :value="item.value" :popper-options="{
         modifiers: [
           {
             name: 'offset',
@@ -26,7 +26,7 @@
   </div>
   <div class="m-4">
     <p>use collapse-tags</p>
-    <el-select v-model="value2" multiple collapse-tags placeholder="Select" style="width: 240px" :popper-options="{
+    <el-select v-model="value2" multiple collapse-tags placeholder="Select" style="width: 240px" popper-class="y-arrow-hidden" :popper-options="{
       modifiers: [
         {
           name: 'offset',
@@ -41,7 +41,7 @@
   </div>
   <div class="m-4">
     <p>use collapse-tags-tooltip</p>
-    <el-select v-model="value3" multiple collapse-tags collapse-tags-tooltip placeholder="Select" style="width: 240px"
+    <el-select v-model="value3" multiple collapse-tags collapse-tags-tooltip placeholder="Select" style="width: 240px" popper-class="y-arrow-hidden"
       :popper-options="{
         modifiers: [
           {
@@ -57,7 +57,7 @@
   </div>
   <div class="m-4">
     <p>use max-collapse-tags</p>
-    <el-select v-model="value4" multiple collapse-tags collapse-tags-tooltip :max-collapse-tags="3" placeholder="Select" :popper-options="{
+    <el-select v-model="value4" multiple collapse-tags collapse-tags-tooltip :max-collapse-tags="3" placeholder="Select" popper-class="y-arrow-hidden" :popper-options="{
       modifiers: [
         {
           name: 'offset',

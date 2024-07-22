@@ -84,9 +84,10 @@ html {
   background-color: white;
   --el-color-border-2: #E5E6EB;
 }
-
-.el-popper__arrow {
-  display: none; // 隐藏下拉框的箭头
+.y-arrow-hidden {
+  .el-popper__arrow {
+    display: none; // 隐藏下拉框的箭头
+  }
 }
 
 .el-input__wrapper,
@@ -224,4 +225,8 @@ html {
       height: map.get($common-component-size, $size);
     }
   }
+}
+
+.el-popover.el-popper {
+  min-width: 200px;
 }
