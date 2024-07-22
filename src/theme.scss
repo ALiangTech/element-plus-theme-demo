@@ -1,3 +1,4 @@
+@use 'sass:map';
 $colors: (
   ) !default;
 $--colors: (
@@ -23,7 +24,6 @@ $bg: #f2f3f5;
   $button: ('hover-text-color': #4e5969,
     'hover-bg-color': #e5e6eb,
     'hover-border-color': transparent,
-    "active-text-color": #fff,
     "active-bg-color": #c9cdd4,
     'active-border-color': transparent,
   ),
@@ -69,6 +69,12 @@ $bg: #f2f3f5;
 @mixin reset-is-focus {
   background-color: #fff !important;
 }
+$common-component-size:
+  (
+    'large': 40px,
+    'default': 32px,
+    'small': 24px,
+  );
 
 // common
 $hover-bg-color: #e5e6eb;
@@ -99,6 +105,12 @@ html {
 
 .el-button {
   min-width: $button-min-width; // 修改默认按钮组件的最小宽度
+}
+
+@each $type in (primary, success, warning, danger, info) {
+  .el-button-#{$type} {
+    --el-button-active-text-color: #fff;
+  }
 }
 
 .el-button--small {
@@ -181,13 +193,35 @@ html {
 
 .el-upload--picture-card {
   background-color: $bg; // 修改卡片上传的背景色
+
   &:hover {
     background-color: #E5E6EB;
   }
 }
 
 .el-upload-dragger {
+  border-color: var(--el-border-color-darker);
+
   &:hover {
     background-color: #E5E6EB;
+  }
+}
+
+.el-radio-button__inner {
+  height: map.get($common-component-size, 'default');
+}
+
+.el-checkbox-button {
+  .el-checkbox-button__inner {
+    height: map.get($common-component-size, 'default');
+  }
+}
+
+@each $size in (large, small) {
+  // 防止修改el-checkbox-button 影响到其他状态的css
+  .el-checkbox-button--#{$size} {
+    .el-checkbox-button__inner {
+      height: map.get($common-component-size, $size);
+    }
   }
 }

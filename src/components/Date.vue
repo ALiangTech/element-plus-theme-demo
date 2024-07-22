@@ -4,6 +4,8 @@
         <div>
             <div class="demonstration">默认</div>
             <el-date-picker v-model="value1" type="daterange" range-separator="To" start-placeholder="Start date"
+
+            :prefix-icon="customPrefix"
                 :popper-options="{
                     modifiers: [
                         {
@@ -26,11 +28,11 @@
                         },
                     },
                 ],
-            }" start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size" />
+            }" start-placeholder="Start date" end-placeholder="End date" :shortcuts="shortcuts" :size="size"  :prefix-icon="customPrefix"/>
         </div>
         <div>
             <div class="demonstration">日期时间</div>
-            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" :popper-options="{
+            <el-date-picker v-model="value3" type="datetime" placeholder="Select date and time" :prefix-icon="customPrefixForTime" :popper-options="{
                 modifiers: [
                     {
                         name: 'offset',
@@ -43,7 +45,7 @@
         </div>
         <div>
             <div>时间选择器</div>
-            <el-time-picker v-model="value4" placeholder="Arbitrary time" :popper-options="{
+            <el-time-picker v-model="value4" placeholder="Arbitrary time" :prefix-icon="customPrefixForTime" :popper-options="{
                 modifiers: [
                     {
                         name: 'offset',
@@ -54,25 +56,14 @@
                 ],
             }" />
         </div>
-        <div>
-            <div>时间选择</div>
-            <el-time-select v-model="value5" style="width: 240px" start="08:30" step="00:15" end="18:30"
-                :popper-options="{
-                    modifiers: [
-                        {
-                            name: 'offset',
-                            options: {
-                                offset: [0, 4],
-                            },
-                        },
-                    ],
-                }" placeholder="Select time" />
-        </div>
     </div>
 </template>
 
 <script lang="ts" setup>
+import { h } from 'vue';
 import { ref } from 'vue'
+import calander from './../assets/calendar.svg';
+import Time from './../assets/time.svg'
 
 const size = ref<'default' | 'large' | 'small'>('default')
 
@@ -111,4 +102,15 @@ const shortcuts = [
         },
     },
 ]
+
+const prefix = (icon) => h('img', {
+    src: icon,
+    style: {
+        height: '16px',
+        width: '16px'
+    }
+})
+
+const customPrefix = () => prefix(calander)
+const customPrefixForTime = () => prefix(Time)
 </script>

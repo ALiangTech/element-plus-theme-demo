@@ -25,6 +25,7 @@ import CheckedBox from './CheckedBox.vue'
 import { ElInput, ElDatePicker, ElButton } from 'element-plus'
 import Finger from './finger.vue'
 import Select from './Select.vue'
+import SearchLogo from './../assets/search.svg'
 
 import { useDark, useToggle } from '@vueuse/core'
 
@@ -92,7 +93,11 @@ const popperOptions = {
       <div>
           <h4>输入框</h4>
           <div style="padding-bottom: 10px;">
-            <el-input v-model="input1" style="width: 240px" :prefix-icon="Search" />
+            <el-input v-model="input1" style="width: 240px">
+              <template #prefix>
+                  <img :src="SearchLogo" style="width: 16px; height: 16px;">
+              </template>
+            </el-input>
           </div>
           <div style="padding-bottom: 10px;">
             <ElInput style="width: 240px"></ElInput>
